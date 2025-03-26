@@ -1,8 +1,19 @@
-
+import java.util.Scanner;
 public class Add {
     public static void main(String[] args){
-        int[] numbers={1,2,3,4,5,6,7,8,9};
-        System.out.print(evenOddSubtraction(numbers));
+        try(Scanner scanner=new Scanner(System.in)){
+            System.out.println("Enter size of the array : ");
+            int size=scanner.nextInt();
+
+            int[] arr=new int[size];
+            System.out.println("Enter elements of the arrayy");
+            for(int i=0;i<size;i++){
+                arr[i]=scanner.nextInt();
+            }
+
+            int result=evenOddSubtraction(arr);
+            System.out.println("Final result is : "+result);
+        }
     }
 
     static int evenOddSubtraction(int[] num){

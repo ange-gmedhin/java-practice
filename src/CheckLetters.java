@@ -1,9 +1,24 @@
-import java.util.Arrays;
+import java.util.Scanner;
 public class CheckLetters{
     public static void main(String[] args){
-        char[] letters={'a', 'b', 'c', 'd'};
-        int start=2;
-        int length=5;
+        try(Scanner scanner=new Scanner(System.in)){
+            System.out.print("Enter the size of the char : ");
+            int size=scanner.nextInt();
+
+            char[] letters=new char[size];
+
+            System.out.println("Enter elements of the array");
+            for (int i = 0; i < size; i++) {
+                System.out.print("Element " + (i + 1) + ": ");
+                letters[i] = scanner.next().charAt(0); // Read single character
+            }
+
+            System.out.println("Enter start: ");
+            int start=scanner.nextInt();
+
+
+            System.out.println("Enter length: ");
+            int length=scanner.nextInt();
 
         char[] result=(checkLetters(letters, start, length));
 
@@ -12,6 +27,7 @@ public class CheckLetters{
         }else{
            printArrayy(result);
         }
+    }
     }
 
     static char[] checkLetters(char[] letters, int start, int length){

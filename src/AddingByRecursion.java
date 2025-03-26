@@ -1,7 +1,13 @@
+import java.util.Scanner;
 public class AddingByRecursion{
     public static void main(String[] args) {
-        int number=5;
-        System.out.print(sumNum(number));
+        try(Scanner scanner=new Scanner(System.in)){
+            System.out.println("Enter any number : ");
+        int number=scanner.nextInt();
+
+        int result = sumNum(number);
+        System.out.print(result);
+        }
     }
 
     //using recursion
